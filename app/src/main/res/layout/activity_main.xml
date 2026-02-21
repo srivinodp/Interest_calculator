@@ -1,257 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fillViewport="true">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="wrap_content"
+        android:background="#FAFAFA"
+        android:padding="24dp"
+        tools:context=".MainActivity">
 
+    <!-- Amount Section -->
+    <TextView
+        android:id="@+id/tvAmountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Principal Amount"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#333333"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAmountValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100000"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        app:layout_constraintTop_toTopOf="@id/tvAmountLabel"
+        app:layout_constraintBottom_toBottomOf="@id/tvAmountLabel"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:valueFrom="1000"
+        android:valueTo="1000000"
+        android:stepSize="1000"
+        android:value="100000"
+        app:layout_constraintTop_toBottomOf="@id/tvAmountLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Interest Rate Section -->
+    <TextView
+        android:id="@+id/tvInterestLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate of Interest (%)"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#333333"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/sliderAmount"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInterestValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.25"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        app:layout_constraintTop_toTopOf="@id/tvInterestLabel"
+        app:layout_constraintBottom_toBottomOf="@id/tvInterestLabel"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderInterest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:valueFrom="0.1"
+        android:valueTo="5.0"
+        android:stepSize="0.01"
+        android:value="1.25"
+        app:layout_constraintTop_toBottomOf="@id/tvInterestLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Details Section -->
+    <LinearLayout
+        android:id="@+id/datesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/sliderInterest">
+
+        <!-- Start Date -->
         <TextView
-            android:id="@+id/am"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Amount"
-            android:textSize="30dp" />
-        <EditText
-            android:id="@+id/amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:ems="12"
-            android:textAlignment="center"
-            android:text="100000"
-            android:inputType="number" />
-        <TextView
-            android:id="@+id/in"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RateOfInterest"
-            android:layout_marginTop="70dp"
-            android:textSize="30dp" />
-
-        <EditText
-            android:id="@+id/intrst_val"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="70dp"
-            android:ems="4"
-            android:inputType="numberDecimal"
-            android:text="1.25"
-            android:textAlignment="center" />
-        <EditText
-            android:id="@+id/d1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="58dp"
-            android:layout_marginTop="190dp"
-            android:ems="2"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/m1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="190dp"
-            android:layout_marginTop="190dp"
-            android:ems="2"
-
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/y1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="190dp"
-            android:layout_toRightOf="@id/yy1"
-            android:ems="6"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="140dp"
-            android:text="Start"
-            android:textSize="30dp" />
-
-        <TextView
-            android:id="@+id/dd1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="190dp"
-            android:text="Date:"
-            android:textSize="25dp" />
-
-        <TextView
-            android:id="@+id/mm1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="190dp"
-            android:text="Month:"
-            android:textSize="25dp" />
-
-        <TextView
-            android:id="@+id/yy1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="240dp"
-            android:layout_marginTop="190dp"
-            android:text="Year:"
-            android:textSize="25dp" />
-
-        <EditText
-            android:id="@+id/d2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="320dp"
-            android:ems="2"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/m2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="190dp"
-            android:layout_marginTop="320dp"
-            android:ems="2"
-
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/y2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="320dp"
-            android:layout_toRightOf="@id/yy1"
-            android:ems="6"
-
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="250dp"
-            android:text="End"
-            android:textSize="30dp" />
-
-        <TextView
-            android:id="@+id/dd2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="320dp"
-            android:text="Date:"
-            android:textSize="25dp" />
-
-        <TextView
-            android:id="@+id/mm2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="320dp"
-            android:text="Month:"
-            android:textSize="25dp" />
-
-        <TextView
-            android:id="@+id/yy2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="240dp"
-            android:layout_marginTop="320dp"
-            android:text="Year:"
-            android:textSize="25dp" />
-
-
-        <TextView
-            android:id="@+id/output"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="530dp"
+            android:text="Start Date"
             android:textStyle="bold"
-            android:text="See here"
-            android:textSize="30dp" />
+            android:textSize="16sp"
+            android:textColor="#555555"
+            android:layout_marginBottom="8dp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:baselineAligned="false">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/d1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="DD"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/m1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="MM"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/y1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="YYYY"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textAlignment="center"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- End Date -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End Date"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#555555"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:baselineAligned="false">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/d2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="DD"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/m2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="MM"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/y2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="YYYY"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textAlignment="center"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Radio Group -->
         <RadioGroup
             android:id="@+id/radioGroup"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dp">
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center">
 
             <RadioButton
                 android:id="@+id/Yes"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:checked="false"
-                android:text="  Tirageta"
-                android:textSize="20dp" />
+                android:text="Tirageta"
+                android:layout_marginEnd="32dp"
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/No"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:checked="false"
-                android:text="   Plain"
-
-                android:textSize="20dp" />
+                android:text="Plain"
+                android:textSize="16sp" />
         </RadioGroup>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="210dp"
-            android:layout_marginTop="430dp"
-            android:text="Calculate" />
+    </LinearLayout>
 
-        <!--        <RadioGroup-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:id="@+id/iscomp">-->
-<!--&lt;!&ndash;        <RadioButton&ndash;&gt;-->
-<!--&lt;!&ndash;            android:id="@+id/Compound_interest"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_marginLeft="30dp"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_marginTop="450dp"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:text="Yes"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:checked="false"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:textSize="20dp" />&ndash;&gt;-->
-<!--            -->
-<!--&lt;!&ndash;        <RadioButton&ndash;&gt;-->
-<!--&lt;!&ndash;            android:id="@+id/simple_interest"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_width="fill_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:text="No"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_marginTop="450dp"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_marginLeft="150dp"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:checked="false"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:textSize="20dp" />&ndash;&gt;-->
-<!--            <RadioButton-->
-<!--                android:id="@+id/radioButton"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="RadioButton" -->
-<!--                android:layout_marginLeft="150dp"-->
-<!--                android:textSize="20dp"-->
-<!--                />-->
-<!--        </RadioGroup>-->
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Result will appear here"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@id/datesContainer"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-
-    </RelativeLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
