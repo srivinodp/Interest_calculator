@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Single-color layer for Android 13+ themed icons; the system tints it. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- "%" sign: two rings, and the slash is a rising growth arrow. Inside the 66dp safe zone. -->
+    <path
+        android:pathData="M32.5,40a6.5,6.5 0,1 1,13 0a6.5,6.5 0,1 1,-13 0z"
+        android:strokeWidth="5"
+        android:strokeColor="#FF000000" />
+    <path
+        android:pathData="M63.5,69a6.5,6.5 0,1 1,13 0a6.5,6.5 0,1 1,-13 0z"
+        android:strokeWidth="5"
+        android:strokeColor="#FF000000" />
+    <path
+        android:pathData="M36,74L66.73,41.7"
+        android:strokeWidth="7"
+        android:strokeColor="#FF000000"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M75,33L71.81,46.52L61.65,36.88Z"
+        android:strokeWidth="2.5"
+        android:strokeColor="#FF000000"
+        android:strokeLineJoin="round" />
+</vector>
