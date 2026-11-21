@@ -1,3 +1,46 @@
 <resources>
-    <string name="app_name">AmmiRaju</string>
+    <string name="app_name">Interest calculator</string>
+    <string name="reset">Reset</string>
+
+    <string name="principal_amount">Principal amount</string>
+    <string name="amount_placeholder">0</string>
+    <string name="decrease_amount">Decrease amount by ₹1,000</string>
+    <string name="increase_amount">Increase amount by ₹1,000</string>
+
+    <string name="rate_of_interest">Rate of interest</string>
+    <string name="rate_unit">% / month</string>
+    <string name="decrease_rate">Decrease rate by 0.01%</string>
+    <string name="increase_rate">Increase rate by 0.01%</string>
+
+    <string name="period">Period</string>
+    <string name="start_date">Start date</string>
+    <string name="end_date">End date</string>
+    <string name="today">Today</string>
+    <string name="dd">DD</string>
+    <string name="mm">MM</string>
+    <string name="yyyy">YYYY</string>
+    <string name="pick_start_date">Pick start date</string>
+    <string name="pick_end_date">Pick end date</string>
+    <string name="error_end_before_start">End date must be on or after the start date</string>
+
+    <string name="interest_type">Interest type</string>
+    <string name="tirageta">Tirageta</string>
+    <string name="plain">Plain</string>
+    <string name="tirageta_description">Compound variant: interest is added to the principal every year</string>
+    <string name="plain_description">Simple interest on the principal for the whole period</string>
+    <string name="mode_description_none">Choose how the interest is calculated</string>
+
+    <string name="total_amount">Total amount</string>
+    <string name="principal">Principal</string>
+    <string name="interest">Interest</string>
+    <string name="interest_on_principal">Interest %1$s on %2$s</string>
+
+    <string name="hint_missing_amount">Enter the principal amount</string>
+    <string name="hint_missing_amount_sub">Type it in the amount box</string>
+    <string name="hint_missing_dates">Enter start and end dates</string>
+    <string name="hint_missing_dates_sub">The result updates live as you type</string>
+    <string name="hint_choose_mode">Choose Tirageta or Plain</string>
+    <string name="hint_choose_mode_sub">Pick an interest type to see the total</string>
+    <string name="hint_incorrect_dates">Check the dates</string>
+    <string name="hint_incorrect_dates_sub">The end date is before the start date</string>
 </resources>

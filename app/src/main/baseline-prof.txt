@@ -1,0 +1,5 @@
+# Baseline Profile: ahead-of-time compile the whole app (it is small) so the first launch and
+# the first interactions run compiled code instead of JIT. Compose, Material 3 and AndroidX ship
+# their own profiles, which AGP merges in. profileinstaller installs them for sideloaded builds.
+HSPLcom/example/interest_calculator/**->**(**)**
+Lcom/example/interest_calculator/**;
